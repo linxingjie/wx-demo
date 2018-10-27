@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/components/abstract/abstract",
+    "pages/components/book/book",
+    "pages/components/course/course",
+    "pages/components/doctor/doctor",
+    "pages/components/online/online",
+    "pages/components/section/section",
+    "pages/components/list/list",
+    "pages/components/detail/detail",
+    "pages/components/teach/teach",
+    "pages/components/detail-list/detail-list",
+    "pages/detail-index/detail-index",
+    "pages/components/chat/chat",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF69B4",
+    "navigationBarTitleText": "孕妇学校",
+    "navigationBarTextStyle": "white"
+  },
+  "debug": true,
+  "tabBar": {
+     "color": "#525252",
+      "selectedColor": "#FF69B4",
+      "borderStyle": "black",
+       "list": [
+      {
+          "selectedIconPath": "/images/index-1.png",
+          "iconPath": "/images/index-2.png",
+          "pagePath": "pages/index/index",
+          "text": "首页"  
+      },
+      {
+          "selectedIconPath": "/images/images/tab_user_sel@2x.png",
+          "iconPath": "/images/images/tab_user_def@2x.png",
+          "pagePath": "pages/my/my",
+          "text": "我的"  
+      }
+    ]  
+  }
+}

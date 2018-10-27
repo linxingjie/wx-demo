@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<view class="container flex-wrap flex-direction-col">
+  <view class="my-swiper" style=''>
+    <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:200px'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item style=''>
+        <image src="{{item}}" class="slide-image" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+</view>
+
+<view class="workbench" style='padding-top: 30rpx; margin-top: 10rpx; '>
+    <!-- <text class="title">工作台</text> -->
+    <view class="list" style='margin-bottom: 10rpx; padding-bottom: 30rpx; '>
+      <view class="items">
+      <navigator url="../components/abstract/abstract" hover-class="none">
+        <image class='school-icon'  src="http://cs.file.haiyizhilian.com/yfxx/images/school.png"></image>
+        <text class= "text-size">孕妇学校简介</text>
+        </navigator>
+      </view>
+      <view class="items">
+        <navigator url="../components/section/section"  hover-class="none">
+        <image class='keshi-icon' src="http://cs.file.haiyizhilian.com/yfxx/images/keshi.png"></image>
+        <text class= "text-size">科室介绍</text>
+        </navigator>
+      </view>
+      <view class="items">
+        <navigator url="../components/doctor/doctor" hover-class="none">
+        <image class="doctor-icon"  src="http://cs.file.haiyizhilian.com/yfxx/images/doctor.png"></image>
+        <text class= "text-size" >名医荟萃</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="list">
+      <view class="items">
+        <navigator url="../components/list/list" hover-class="none">
+        <image class= "book-icon" src="http://cs.file.haiyizhilian.com/yfxx/images/book.png"></image>
+        <text class= "text-size">线上课程</text>
+        </navigator>
+      </view>
+
+      <view class="items">
+        <navigator url="../components/teach/teach" hover-class="none">
+        <image class='msg-icon' src="http://cs.file.haiyizhilian.com/yfxx/images/msg-1.png"></image>
+        <text class= "text-size">线下课程预约</text>
+        </navigator>
+      </view>
+      <view class="items">
+        <navigator url="../components/course/course"  hover-class="none">
+        <image class='course-icon' src="http://cs.file.haiyizhilian.com/yfxx/images/course-1.png "></image>
+        <text class= "text-size">最新课程表</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+
+<view class="">
+  <view class="news-item-container">
+    <block wx:for="{{list}}" wx:for-index="id">
+      <view wx:if="{{item.header}}" class="sub-title" style=''>{{item.header}}</view>
+      <navigator wx:else url="../detail-index/detail-index?id={{item.id}}">
+        <view class="news-item" >
+          <view class="news-item-left">
+              <text class="news-item-title" 
+              style='overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2;'>{{item.title}}\n</text>
+              <text class="news-item-title" style='font-size:13px;'>{{item.createTime}}</text>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <button type="primary" class="load-btn"  loading="{{loading}}" plain="{{plain}}" bindtap="loadMore"> 更多 </button>
+  </view>
+</view>
+
+
+

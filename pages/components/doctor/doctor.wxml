@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="news-item-container">
+    <block wx:for="{{list}}" wx:for-index="id">
+      <text wx:if="{{item.header}}" class="sub-title">{{item.header}}</text>
+      <navigator wx:else url="../detail/detail?USER_ID={{item.USER_ID}}">
+        <view class="news-item" >
+          <view class="news-item-left">
+              <text class="news-item-title">{{item.REALNAME}}\n{{item.DEPT_NAME}}-{{item.PROFESSIONAL_HIGH_NAME}}\n</text>
+              <navigator  url="../chat/chat">
+              <!-- -->
+              <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; float:left;  margin:10px 10px; padding: 0px 10px; font-size: 11px; '>咨询Ta</button>
+              </navigator>
+              </view>
+          <view class="news-item-right">
+            <image src="{{item.ICON_URL}}" class="news-image"/>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <button type="primary" class="load-btn"  loading="{{loading}}" plain="{{plain}}" bindtap="loadMore"> 更多 </button>
+  </view>
+  
+</view>

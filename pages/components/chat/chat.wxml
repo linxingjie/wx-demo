@@ -1,0 +1,22 @@
+<view class="page-body">
+  <view class="page-section">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!-- <view class="page-section-title">这是一个可以自动聚焦的textarea</view> -->
+      <view class="textarea-wrp" style='margin:10px; 10px; padding: 5px 5px;'>
+      <textarea auto-focus="true" style="height: 8em;" name="resText" />
+      </view>
+      <view style='padding:8px;'>
+        <view>问题类型</view>  
+        <switch name="switchName" style='font-size: 14px;padding:5px;'>匿名</switch>
+      </view>
+      <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; margin:10px 10px; padding: 0px 10px;font-size: 11px; '>备孕</button>
+      <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; margin:10px 10px; padding: 0px 10px;font-size: 11px; '>孕早期</button>
+      <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; margin:10px 10px; padding: 0px 10px;font-size: 11px; '>孕中期</button>
+      <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; margin:10px 10px; padding: 0px 10px;font-size: 11px; '>孕晚期</button>
+      <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; margin:10px 10px; padding: 0px 10px;font-size: 11px; '>产后和新生儿</button>
+      <!-- <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; margin:10px 10px; padding: 0px 10px;font-size: 11px; '>职场事业</button> -->
+      <button type='primary' formType='submit' size='default' style='font-size: 15px;' >提交</button>
+    </form>
+   
+   </view>
+</view>

@@ -1,0 +1,22 @@
+<!--detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="container">
+
+    <view class='h1-title '>{{art.lessonName}}</view> 
+    <view class='h2-realName'>讲课人：{{art.realName}}</view> 
+
+    <block wx:if="{{art.lessonVideoUrl !== 0}}">
+        <view class="section tc">
+          <video src="{{art.lessonVideoUrl}}"   controls ></video>
+          <!-- <button bindtap="bindButtonTap">获取视频</button> -->
+        </view>
+
+      </block> 
+    <block class="art-header" wx:elif="{{art.lessonVideoUrl === 0 }}">
+    </block>
+    <block wx:if= "{{art.fileList.length >0 && art.fileList[0]}}">
+      <button bindtap="bindPPT">下载PPT并打开PPT</button>
+    </block>
+    <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+   
+</view>

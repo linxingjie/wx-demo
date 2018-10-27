@@ -1,0 +1,24 @@
+<!--list.wxml-->
+<view class="container">
+  <view class="news-item-container">
+    <navigator url="../detail-list/detail-list?id={{item.id}}" wx:for="{{list}}" wx:for-index="id">
+        <view class="news-item"  style=''>
+          <view class="news-item-right">
+            <image src="{{item.bigImgUrl}}" class="news-image"/>
+          </view>
+          <view class="news-item-left" style=' margin:0px 30px; padding: 0px 0px; '>
+            <text class="news-item-title" style='overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2;'>{{item.lessonName}}\n</text>
+            <text style='font-size: 13px;'>{{item.lessonStartTime}}{{item.lessonDoctorName}}\n</text>
+            <!-- margin:10px 0px 10px 80px; padding: 0px 10px; -->
+
+            <button  wx:if= "{{item.isEnroll === 'true'}}" size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; float:right;  font-size: 11px; '  catchtap="modalcnt"  data-id= "{{item.id}}">立即报名</button>
+            
+            <button wx:if= "{{item.isEnroll === ''}}"  size='mini' plain= "true"  style=' float:right;  font-size: 11px; ' type="default"  catchtap="modalcnt"  data-id= "{{item.id}}" disabled = "true">已报名</button>
+
+
+
+          </view>
+        </view>
+    </navigator>
+  </view>
+</view>
