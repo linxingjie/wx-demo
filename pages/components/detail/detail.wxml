@@ -1,0 +1,21 @@
+<!--detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="container">
+    <!-- <view class="art-header">
+        <image src="../../../medical-left-img.jpg" class="art-img"/>
+        <!-- <view class="art-title">{{art.realName}}</view>
+        <view class="art-source">{{art.professionalHighName}}</view> -->
+   <!-- </view> -->
+
+    <view class="art-content">
+          <!-- <view>{{art.realName}}</view>
+          <image src="{{art.iconUrl}}" style='width:50%' />
+          <view>职称：{{art.professionalHighName}}\n</view>
+          <view>所属科室:{{art.deptName}}\n</view>
+          <view style='color:red'>专家简介\n</view> -->
+          <!-- <view class="">{{art.doctorDetails}}</view> -->
+          <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+
+    </view> 
+
+</view>

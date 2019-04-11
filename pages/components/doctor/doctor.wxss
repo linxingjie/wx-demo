@@ -1,0 +1,161 @@
+/**index.wxss**/
+@import "../../../utils/weui.wxss";
+.banners {
+  width: 100%;
+  height: 200px;
+}
+
+.banner{
+  position: relative;
+}
+
+.banner-image{
+  width: 100%;
+  height: 100%;
+}
+
+.banner-title{
+  color: #FFF;
+  position: absolute;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px; 
+  bottom: 30px;
+  font-size: 16px;
+   left: 0;
+}
+
+.sub-title{
+  color: #76787e;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.news-item-container {
+  background-color: #f2f2f2;
+  width: 97%;
+  padding: 0 8px;
+  /* padding: 8px; */
+}
+
+.news-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 8px;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-bottom: 1px solid #d0d0d0;
+  border-radius: 5px;
+}
+
+.news-item-right{
+  width: 80px;
+  height: 80px;
+}
+
+.news-image{
+  width: 80px;
+  height: 80px;
+}
+
+.news-item-title{
+  font-size: 16px;
+}
+
+.load-btn{
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: block;
+  line-height: 2.3;
+  font-size: 13px;
+  padding: 0 1.34em;
+}
+
+.doctor-header{
+margin-top:30rpx;
+margin-left:50rpx;
+font-size:28rpx;
+
+}
+.search-doctor{
+  padding:15rpx 20rpx 0px 20rpx;
+  background-color:#fff;
+  border-bottom:0rpx solid #fff;
+
+}
+.doctor-header-page{
+margin-top:30rpx;
+font-size:14px;
+margin-left:497rpx;
+color: #666666
+}
+.icon-doctor{
+  width:109rpx;
+  height:109rpx;
+  border-radius:50%;
+  overflow:hidden;
+  margin:27rpx 0 0 24rpx;
+}
+.icon-doctor-images{
+  width: 100%;
+  height: 100%;
+}
+.doctor-block{
+width:710rpx;
+height:267rpx;
+margin:30rpx 20rpx 0rpx 20rpx;
+
+}
+.doctor-title{
+  margin:30rpx 0 0 12rpx;
+}
+icon-button{
+  color: #f92d67;
+   border-color: #f92d67; 
+   width:150rpx;
+   height:50rpx; 
+   font-size: 28rpx;
+}
+.doctor-content{
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+ -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  font-size: 24rpx;
+  color: #666666;
+  margin-left:24rpx;
+  margin-right:24rpx; 
+  margin-top: 20rpx;
+}
+.icon-doctor-name{
+  margin-left:50rpx;
+  font-size:14px;
+
+}
+.icon-doctor-dept{
+  font-size:12px;
+  margin-left:10rpx;
+
+}
+.doctor-button-view{
+  display:block;
+  margin:27rpx  0 0 500rpx;
+  position:absolute;
+}

@@ -1,0 +1,17 @@
+<!--detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="container">
+    <!-- <view class="art-header">
+        <image src="../../../medical-left-img.jpg" class="art-img"/>
+        <view class="art-title">{{art.title}}</view>
+        <view class="art-source">{{art.image_source}}</view>
+    </view> -->
+
+     <view class='h1-title'>{{art.title}}</view>
+      <!-- {{art.description}} -->
+
+    <template is="wxParse" data="{{wxParseData:body.nodes}}" />
+    
+     <!-- <image src="{{art.description}}" /> -->
+
+</view>

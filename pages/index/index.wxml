@@ -1,0 +1,127 @@
+<!--index.wxml-->
+<view class="container flex-wrap flex-direction-col">
+  <view class="my-swiper" style=''>
+    <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:170px;'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item style=''>
+        <image src="{{item}}" class="slide-image" height="100%" width="100%"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+</view>
+
+<view class="workbench">
+    <!-- <text class="title">工作台</text> -->
+    <view class="list" style='margin-bottom: 10rpx; padding-bottom: 30rpx;'>
+      <view class="items">
+      <navigator url="../components/abstract/abstract" hover-class="none">
+        <image class='school-icon'  src="http://cs.file.haiyizhilian.com/yfxx/images/school.png"></image>
+        <text class= "text-size">孕妇学校简介</text>
+        </navigator>
+      </view>
+      <view class="items">
+        <navigator url="../components/section/section"  hover-class="none">
+        <image class='keshi-icon' src="http://cs.file.haiyizhilian.com/yfxx/images/keshi.png"></image>
+        <text class= "text-size">科室介绍</text>
+        </navigator>
+      </view>
+      <view class="items">
+        <navigator url="../components/doctor/doctor" hover-class="none">
+        <image class="doctor-icon"  src="http://cs.file.haiyizhilian.com/yfxx/images/doctor.png"></image>
+        <text class= "text-size" >名医荟萃</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="list">
+      <view class="items">
+        <navigator url="../components/list/list" hover-class="none">
+        <image class= "book-icon" src="http://cs.file.haiyizhilian.com/yfxx/images/book.png"></image>
+        <text class= "text-size">线上课程</text>
+        </navigator>
+      </view>
+
+      <view class="items">
+        <navigator url="../components/teach/teach" hover-class="none">
+        <image class='msg-icon' src="http://cs.file.haiyizhilian.com/yfxx/images/msg-1.png"></image>
+        <text class= "text-size">线下课程预约</text>
+        </navigator>
+      </view>
+      <view class="items">
+        <navigator url="../components/course/course"  hover-class="none">
+        <image class='course-icon' src="http://cs.file.haiyizhilian.com/yfxx/images/course-1.png "></image>
+        <text class= "text-size">最新课程表</text>
+        </navigator>
+      </view>
+
+      <!-- <view class="items">
+        <navigator url="../components/live/live"  hover-class="none">
+        <image class='course-icon' src="http://cs.file.haiyizhilian.com/yfxx/images/course-1.png "></image>
+        <text class= "text-size">live</text>
+        </navigator>
+      </view> -->
+
+    </view>
+  </view>
+
+
+<view class="news-item-container-new">
+   <view class="news-item-news" >
+      <view style='display:flex'>
+        <view class="news-h1">活动分享</view>
+        <view class= "icon-more"><image style='width:100%;height:100%;' src="/images/icon-more.png"></image></view>
+        </view>
+
+
+        <navigator  wx:for="{{list}}" wx:for-index="id" wx:key="index"  url="../detail-index/detail-index?id={{item.id}}">
+        <view class="news-item-content">
+          <view style='width:100rpx;height:100rpx;'><image src='/images/icon-news.png'style='width:100%;height:100%;'></image>
+            </view>
+            <view style='display:block;margin-left:10px; '>
+              <view class="news-title" >{{item.title}}</view>
+              <view class="news-time">{{item.createTime}}</view>
+            </view>
+        </view>
+      </navigator>
+
+
+      <view class="weui-loadmore" hidden="{{!loading}}">        
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+
+      <view class="weui-loadmore weui-loadmore_line" hidden="{{loading}}" style='margin-top:1.4em;'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line" >暂无数据</view>
+      </view>      
+
+  </view>
+
+</view>
+
+
+
+
+
+<!-- 
+
+<view class="">
+  <view class="news-item-container">
+    <block wx:for="{{list}}" wx:for-index="id">
+      <view wx:if="{{item.header}}" class="sub-title" style=''>{{item.header}}</view>
+      <navigator wx:else url="../detail-index/detail-index?id={{item.id}}">
+        <view class="news-item" >
+          <view class="news-item-left">
+              <text class="news-item-title" 
+              style='overflow:hidden; text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2;'>{{item.title}}\n</text>
+              <text class="news-item-title" style='font-size:13px;'>{{item.createTime}}</text>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <button type="primary" class="load-btn"  loading="{{loading}}" plain="{{plain}}" bindtap="loadMore"> 更多 </button>
+  </view>
+</view> -->
+
+
+

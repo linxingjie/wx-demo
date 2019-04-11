@@ -1,0 +1,101 @@
+<!--index.wxml-->
+
+<view class="page__bd">
+        <view class="weui-search-bar search-doctor">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box  " style='background-color:#EFEFF4;'>
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput" style='background-color:#EFEFF4;'>
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+          </view>
+</view>
+
+<view>
+ <view  style='display:flex;'>
+   <view class="doctor-header">推荐医生</view>
+   <view class="doctor-header-page">共{{total}}</view>
+ </view>
+ 
+ <view class='' style='background:url("http://cs.file.haiyizhilian.com/yfxx/click-background-doctor.png");  background-size:100% 100%;background-repeat:no-repeat;width:710rpx;height:280rpx;margin:30rpx 20rpx 0rpx 20rpx;' 
+ wx:for="{{list}}" wx:for-index="index" wx:key="{{key}}"
+ >
+
+  <view style='display:flex'>
+    <view class="icon-doctor"><image src='{{item.ICON_URL}}' binderror="errorFunction"  class="icon-doctor-images"
+    data-index='{{index}}'></image></view>
+    <view style='display:block' class="doctor-title">
+      <view class="icon-doctor-name">{{item.REALNAME}}</view>
+      <view class="icon-doctor-dept"><span>{{item.DEPT_NAME}}   </span> <span>{{item.PROFESSIONAL_HIGH_NAME}}</span></view>
+      <view style='font-size:24rpx;'>{{item.USER_ORG_NAME}}</view>
+    </view>
+
+    <view style='' class="doctor-button-view">
+    <view>
+    <navigator  url="../detail/detail?USER_ID={{item.USER_ID}}">
+       <button size='mini' plain= "true"  class="icon-button" 
+       style="  color: #f92d67;border-color: #f92d67; width:150rpx;height:50rpx; font-size: 20rpx;text-align:center;">查看详情</button>
+    </navigator>
+    </view>
+
+    <view>
+        <navigator  url="../chat/chat">
+       <button size='mini' plain= "true"  class="icon-button" 
+       style="  color: #f92d67;border-color: #f92d67; width:150rpx;height:50rpx; font-size: 20rpx;text-align:center;">咨询TA</button>
+    </navigator>
+    </view>
+
+    </view>
+
+  </view>
+
+  <view class='doctor-content'>擅长:{{item.GOOD_AT}}</view>
+ 
+ </view>
+
+      <view class="weui-loadmore" hidden="{{!loading}}">        
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+
+      <view class="weui-loadmore weui-loadmore_line" hidden="{{loading}}" style='margin-top:1.4em;'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line" >暂无数据</view>
+      </view>
+
+</view>
+
+
+
+
+
+<!-- <view class="container">
+  <view class="news-item-container">
+    <block wx:for="{{list}}" wx:for-index="id">
+      <text wx:if="{{item.header}}" class="sub-title">{{item.header}}</text>
+      <navigator wx:else url="../detail/detail?USER_ID={{item.USER_ID}}">
+        <view class="news-item" >
+          <view class="news-item-left">
+              <text class="news-item-title">{{item.REALNAME}}\n{{item.DEPT_NAME}}-{{item.PROFESSIONAL_HIGH_NAME}}\n</text>
+              <navigator  url="../chat/chat">
+              <!-- -->
+              <!-- <button size='mini' plain= "true"  style='color: #ff8719; border-color: #ff8719; float:left;  margin:10px 10px; padding: 0px 10px; font-size: 11px; '>咨询Ta</button>
+              </navigator>
+              </view>
+          <view class="news-item-right">
+            <image src="{{item.ICON_URL}}" class="news-image"/>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <button type="primary" class="load-btn"  loading="{{loading}}" plain="{{plain}}" bindtap="loadMore"> 更多 </button>
+  </view>
+  
+</view>  -->

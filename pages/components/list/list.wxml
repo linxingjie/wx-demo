@@ -1,0 +1,32 @@
+<!-- list.wxml
+<view class="container">
+  <view class="news-item-container">
+    <navigator url="../detail-list/detail-list?id={{item.id}}" wx:for="{{list}}" wx:for-index="id">
+        <view class="news-item" >
+          <view class="news-item-left">
+            <text class="news-item-title">{{item.lessonName}}</text>
+          </view>
+          <view class="news-item-right">
+            <image src="{{item.bigImgUrl}}" class="news-image"/>
+          </view>
+        </view>
+    </navigator>
+  </view>
+</view> -->
+
+
+<!--theme.wxml-->
+<view class="container">
+    <navigator class="card" url="../detail-list/detail-list?id={{item.id}}"  wx:for="{{list}}" wx:for-index="id">
+        <image src="{{item.bigImgUrl}}" class="card-image"></image>
+        <view class="card-content">
+            <view>
+                <text class="card-title">{{item.lessonName}}</text>
+            </view>
+            <view>
+                <text class="card-desc">计划课时：{{item.lessonPlanedTimes}}课时，每课时: {{item.lessonLength}}分钟</text>
+            </view>
+        </view>
+    </navigator>
+        <button type="primary" class="load-btn"  loading="{{loading}}" plain="{{plain}}" bindtap="loadMore"> 更多 </button>
+</view>

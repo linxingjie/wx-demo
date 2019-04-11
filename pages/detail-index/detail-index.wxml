@@ -1,0 +1,14 @@
+<!--detail.wxml-->
+<import src="../wxParse/wxParse.wxml"/>
+<view class="container">
+
+    <view class="art-content">
+          <view class='h1-title'>{{art.title}}</view> 
+          <view class='h2-realName'>{{art.createTime}}\n</view> 
+    </view> 
+    <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+    <!-- <block wx:if= "{{art.fileList.length >=0 && art.fileList[0].path}}">
+      <button bindtap="bindPPT">阅读PPT</button>
+    </block> -->
+
+</view>
